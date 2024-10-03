@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        background: linear-gradient(to bottom, #175d69 23%, #330c43 95%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Navbar styles */
+      .header {
+        width: 100%;
+        background-color: rgba(23, 93, 105, 0.8);
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .navbar .logo a {
+        font-size: 1.8rem;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .navbar .links {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+      }
+
+      .navbar .links a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 0;
+        transition: color 0.3s;
+      }
+
+      .navbar .links a:hover {
+        color: #47b2e4;
+      }
+
+      .navbar .buttons a {
+        text-decoration: none;
+        padding: 10px 20px;
+        border: 1px solid #fff;
+        border-radius: 4px;
+        color: #fff;
+        transition: background 0.3s;
+      }
+
+      .navbar .buttons a.signup:hover {
+        background-color: #47b2e4;
+      }
+
+      .register-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px; /* Adjust to accommodate fixed navbar */
+        background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .register-content {
+        display: flex;
+        gap: 20px;
+        max-width: 100%;
+        height: 500px;
+        overflow-y: auto;
+      }
+
+      .register-form {
+        flex: 1;
+        max-width: 50%;
+        padding-right: 20px;
+      }
+
+      .register-form h2 {
+        text-align: center;
+        color: #fff;
+        margin-bottom: 20px;
+      }
+
+      .register-form input,
+      .register-form select {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 4px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+      }
+
+      .register-form label {
+        font-size: 0.9rem;
+        color: #fff;
+        margin-bottom: 5px;
+        display: block;
+      }
+
+      .register-form button {
+        width: 100%;
+        background-color: #47b2e4;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .register-form button:hover {
+        background-color: #175d69;
+      }
+
+      .register-image {
+        flex: 1;
+        max-width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .register-image img {
+        width: 100%;
+        border-radius: 8px;
+      }
+
+      /* Scrollbar */
+      .register-content::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      .register-content::-webkit-scrollbar-thumb {
+        background-color: #ccc;
+        border-radius: 10px;
+      }
+
+      /* Responsive adjustments */
+      @media screen and (max-width: 768px) {
+        .register-content {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="header">
+      <nav class="navbar">
+        <h2 class="logo"><a href="#">JOB</a></h2>
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+        </ul>
+        <div class="buttons">
+          <a href="signinland.html" class="signin">Sign In</a>
+          <a href="signupland.html" class="signup">Sign Up</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Registration Form -->
+    <div class="register-container">
+      <div class="register-content">
+        <form class="register-form">
+          <h2>Student Registration</h2>
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required />
+          <label for="college">College Name</label>
+          <input type="text" id="college" name="college" placeholder="Enter your college name" required />
+          <label for="place">Place</label>
+          <input type="text" id="place" name="place" placeholder="Enter your place" required />
+          <label for="age">Age</label>
+          <input type="number" id="age" name="age" placeholder="Enter your age" required />
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" required>
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+          <label for="higher_education">Higher Education</label>
+          <input type="text" id="higher_education" name="higher_education" placeholder="Enter your higher education" required />
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required />
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required />
+          <label for="confirm_password">Confirm Password</label>
+          <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required />
+          <div class="checkbox">
+            <input type="checkbox" id="terms" name="terms" required />
+            <label for="terms">I agree to the Terms and Conditions</label>
+          </div>
+          <button type="submit">Register</button>
+          <p>Already have an account? <a href="studentlogin.html">Sign In</a></p>
+        </form>
+
+        <!-- Image Section -->
+        <div class="register-image">
+          <img src="https://hr.web.baylor.edu/sites/g/files/ecbvkj1046/files/2023-04/Student%20Employment%20900.jpg" alt="Registration Image" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
